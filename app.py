@@ -24,7 +24,7 @@ y recomendar **tratamientos específicos**.
 # Cargar modelo
 @st.cache_resource
 def load_model():
-    return tf.keras.models.load_model('models/mejor_modelo_tf211.h5')
+    return tf.keras.models.load_model('models/mejor_modelo_tf211.h5', include_optimizer=False)
 
 model = load_model()
 
