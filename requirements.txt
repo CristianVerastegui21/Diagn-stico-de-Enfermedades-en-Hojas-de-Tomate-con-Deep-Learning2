@@ -1,5 +1,5 @@
-streamlit
-tensorflow>=2.11.0,<2.13.0
+streamlit==1.22.0
+tensorflow==2.12.1
 opencv-python-headless
 keras-tuner
 gdown
@@ -11,3 +11,4 @@ scikit-learn
 statsmodels
 reportlab
 Pillow
+
