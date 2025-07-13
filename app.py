@@ -5,6 +5,7 @@ import cv2
 from PIL import Image
 import matplotlib.pyplot as plt
 import seaborn as sns
+import os
 
 # Configuración
 st.set_page_config(
@@ -24,7 +25,6 @@ y recomendar **tratamientos específicos**.
 @st.cache_resource
 def load_model():
     return tf.keras.models.load_model('models/mejor_modelo_tf211.h5')
-
 
 model = load_model()
 
