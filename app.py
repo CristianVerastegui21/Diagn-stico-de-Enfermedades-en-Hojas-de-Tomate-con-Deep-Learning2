@@ -22,9 +22,17 @@ y recomendar **tratamientos específicos**.
 """)
 
 # Cargar modelo
-@st.cache_resource
+@st.cache_resource(show_spinner=False)
 def load_model():
-    return tf.keras.models.load_model('models/mejor_modelo_tf211.h5', include_optimizer=False)
+    try:
+        model = tf.keras.models.load_model(
+            'models/mejor_modelo_tf211.h5',
+            compile=False    # ← así
+        )
+        return model
+    except Exception as e:
+        st.error(f"Error cargando el modelo: {e}")
+        raise
 
 model = load_model()
 
